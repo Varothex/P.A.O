@@ -14,4 +14,10 @@ public class Chirurg extends Medic
     {
         return salariu * bonus;
     }
+
+    @Override
+    public String toString()
+    {
+        return "Medicul primar " + nume + " care lucreaza la " + cabinet + " are salariul de " + salariu + " lei.\n\n";
+    }
 }

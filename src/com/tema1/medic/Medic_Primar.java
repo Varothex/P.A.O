@@ -18,6 +18,6 @@ public class Medic_Primar extends Medic
     @Override
     public String toString()
     {
-        return "Medicul primar " + nume + " care lucreaza la " + cabinet + " are salariul de " + salariu + " lei.\n\n";
+        return "Medicul primar " + nume + " care lucreaza la " + cabinet + " are salariul de " + salariu() + " lei.\n\n";
     }
 }

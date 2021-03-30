@@ -6,14 +6,13 @@ public abstract class Programare
 {
     protected String data;
     protected String locatie;
-    //private Pacient pacient;
+    private Pacient pacient;
 
-    //public Programare(String data, String locatie, Pacient pacient)
-    public Programare(String data, String locatie)
+    public Programare(String data, String locatie, Pacient pacient)
     {
         this.data = data;
         this.locatie = locatie;
-        //this.pacient = pacient;
+        this.pacient = pacient;
     }
 
     public String getData()
@@ -36,13 +35,13 @@ public abstract class Programare
         this.locatie = locatie;
     }
 
-//    public Pacient getPacient()
-//    {
-//        return pacient;
-//    }
-//
-//    public void setPacient(Pacient pacient)
-//    {
-//        this.pacient = pacient;
-//    }
+    public Pacient getPacient()
+    {
+        return pacient;
+    }
+
+    public void setPacient(Pacient pacient)
+    {
+        this.pacient = pacient;
+    }
 }

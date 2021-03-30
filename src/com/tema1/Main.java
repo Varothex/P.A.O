@@ -7,7 +7,9 @@ public class Main
 {
     public static void main(String[] args)
     {
-        Medic mp = new Medic_Primar("Ana Ionescu", "Bucuresti,Nucului nr.45", 8000);
+        Medic mp = new Medic_Primar("Anamaria Lola", "Suceava", 8000);
+
+        System.out.println(mp);
     }
 }
 

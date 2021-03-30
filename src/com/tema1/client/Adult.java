@@ -1,13 +1,15 @@
 package com.tema1.client;
 
+import java.util.Arrays;
+
 public class Adult extends Pacient
 {
     private String asigurare;
     private String loc_munca;
 
-    public Adult(String nume, int varsta, String afectiune, String asigurare, String loc_munca)
+    public Adult(String nume, int varsta, String afectiune, String asigurare, String loc_munca, String[] alergie)
     {
-        super(nume, varsta, afectiune);
+        super(nume, varsta, afectiune, alergie);
         this.asigurare = asigurare;
         this.loc_munca = loc_munca;
     }
@@ -30,5 +32,11 @@ public class Adult extends Pacient
     public void setLoc_munca(String loc_munca)
     {
         this.loc_munca = loc_munca;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Pacientul " + nume + " care lucreaza ca " + loc_munca + " sufera de " + afectiune + " si este alergic la " + Arrays.toString(alergie) + ".\n\n";
     }
 }

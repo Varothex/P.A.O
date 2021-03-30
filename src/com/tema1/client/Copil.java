@@ -5,9 +5,9 @@ public class Copil extends Pacient
     private String frica;
     private String scoala;
 
-    public Copil(String nume, int varsta, String afectiune, String frica, String scoala)
+    public Copil(String nume, int varsta, String afectiune, String frica, String scoala, String[] alergie)
     {
-        super(nume, varsta, afectiune);
+        super(nume, varsta, afectiune, alergie);
         this.frica = frica;
         this.scoala = scoala;
     }

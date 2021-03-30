@@ -5,6 +5,7 @@ public abstract class Pacient
     protected String nume;
     protected int varsta;
     protected String afectiune;
+    protected String[] alergie;
     private int idPacient;
     private static int nr = 0;
 
@@ -12,11 +13,12 @@ public abstract class Pacient
         this.idPacient = ++nr;
     }
 
-    public Pacient(String nume, int varsta, String afectiune)
+    public Pacient(String nume, int varsta, String afectiune, String[] alergie)
     {
         this.nume = nume;
         this.varsta = varsta;
         this.afectiune = afectiune;
+        this.alergie = alergie;
     }
 
     public String getNume()
@@ -47,6 +49,18 @@ public abstract class Pacient
     public void setAfectiune(String afectiune)
     {
         this.afectiune = afectiune;
+    }
+
+    public void getAlergie(String[] alergie)
+    {
+        for (String s : alergie)
+            System.out.println(s + " ");
+        System.out.println();
+    }
+
+    public void setAlergie(String[] alergie)
+    {
+        this.alergie = alergie;
     }
 
     public int getId()

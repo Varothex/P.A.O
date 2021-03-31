@@ -3,11 +3,11 @@ package com.tema1.programare;
 import com.tema1.client.Pacient;
 import com.tema1.medic.Medic;
 
-public class Programare_Chirurg extends Programare
+public class Programare_Medic_Chirurg extends Programare
 {
     private String zona_operatie;
 
-    public Programare_Chirurg(String data, String locatie, Pacient pacient, String zona_operatie, Medic medic)
+    public Programare_Medic_Chirurg(String data, String locatie, String pacient, String zona_operatie, String medic)
     {
         super(data, locatie, pacient, medic);
         this.zona_operatie = zona_operatie;

@@ -2,12 +2,12 @@ package com.tema1.client;
 
 import java.util.Arrays;
 
-public class Adult extends Pacient
+public class Pacient_Adult extends Pacient
 {
     private String asigurare;
     private String loc_munca;
 
-    public Adult(String nume, int varsta, String afectiune, String asigurare, String loc_munca, String[] alergie)
+    public Pacient_Adult(String nume, int varsta, String afectiune, String asigurare, String loc_munca, String[] alergie)
     {
         super(nume, varsta, afectiune, alergie);
         this.asigurare = asigurare;

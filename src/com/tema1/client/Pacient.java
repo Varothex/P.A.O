@@ -63,7 +63,7 @@ public abstract class Pacient
         this.alergie = alergie;
     }
 
-    public int getId()
+    public int getIdPacient()
     {
         return idPacient;
     }

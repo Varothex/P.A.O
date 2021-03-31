@@ -8,10 +8,9 @@ public class Programare_Medic_Primar extends Programare
     private int[] pret = {100, 200, 300};
     int consultatie;
 
-    public Programare_Medic_Primar(String data, String locatie, Pacient pacient, int[] pret, Medic medic, int consultatie)
+    public Programare_Medic_Primar(String data, String locatie, String pacient, String medic, int consultatie)
     {
         super(data, locatie, pacient, medic);
-        this.pret = pret;
         this.consultatie = consultatie;
     }
 

@@ -1,10 +1,10 @@
 package com.tema1.medic;
 
-public class Chirurg extends Medic
+public class Medic_Chirurg extends Medic
 {
     static final int bonus = 6;
 
-    public Chirurg(String nume, String cabinet, double salariu)
+    public Medic_Chirurg(String nume, String cabinet, double salariu)
     {
         super(nume, cabinet, salariu);
     }

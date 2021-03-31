@@ -2,6 +2,7 @@ package com.tema1.medic;
 
 public abstract class Medic
 {
+    public String getSalariu;
     protected String nume;
     protected String cabinet;
     protected int idMedic;

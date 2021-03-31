@@ -1,104 +1,122 @@
 package com.tema1;
 
-import com.tema1.medic.Medic;
-import com.tema1.medic.Medic_Primar;
-
-import com.tema1.client.Pacient;
-import com.tema1.client.Adult;
+import java.util.Scanner;
+import com.tema1.client.*;
+import com.tema1.medic.*;
+import com.tema1.programare.*;
+import com.tema1.Serviciu;
 
 public class Main
 {
     public static void main(String[] args)
     {
-        Medic mp = new Medic_Primar("Lola Anamaria", "Suceava Medical SA", 8000);
-        Pacient da = new Adult("Marcel Lecram", 40, "gripa", "Nu are.", "muncitor", new String[]{"nuci", "migdale"});
+        System.out.println("1 pentru a adauga un medic primar");
+        System.out.println("2 pentru a adauga un medic chirurg");
+        System.out.println("3 pentru a adauga un pacient adult");
+        System.out.println("4 pentru a adauga un pacient copil");
+        System.out.println("5 pentru a adauga o programare pt medic primar");
+        System.out.println("6 pentru a adauga o programare pt medic chirurg");
+        System.out.println("7 pentru a cauta un medic");
+        System.out.println("8 pentru a cauta un client");
+        System.out.println("9 pentru a afisa medicii");
+        System.out.println("10 pentru a afisa pacientii");
+        System.out.println("11 pentru a afisa programarile");
+        System.out.println("12 pentru a termina");
 
-        System.out.println(mp);
-        System.out.println(da);
+        Scanner in = new Scanner(System.in);
+        int i = in.nextInt();
+
+        Serviciu interogations = new Serviciu();
+
+        while (i > 0)
+        {
+            if (i == 1)
+            {
+                interogations.addMedic_Primar(in);
+            }
+
+            if (i == 2)
+            {
+                interogations.addMedic_Chirurg(in);
+            }
+
+
+            if (i == 3)
+            {
+                interogations.addPacient_Adult(in);
+            }
+
+            if (i == 4)
+            {
+                interogations.addPacient_Copil(in);
+            }
+
+            if (i == 5)
+            {
+                interogations.addProgramare_Medic_Primar(in);
+            }
+
+            if (i == 6)
+            {
+                interogations.addProgramare_Medic_Chirurg(in);
+            }
+
+            if (i == 7)
+            {
+                System.out.println("Scrieti id-ul medicului:");
+                Medic medic = Serviciu.findMedic(in.nextInt());
+                if (medic != null)
+                    System.out.println(medic.getNume() + " " + medic.getCabinet() + " " + medic.getIdMedic() + " " + medic.getSalariu() + "\n");
+                else
+                    System.out.println("Medicul nu exista!");
+            }
+
+            if (i == 8)
+            {
+                System.out.println("Scrieti id-ul pacientului:");
+                Pacient client = Serviciu.findClient(in.nextInt());
+                if (client != null)
+                    System.out.println(client.getNume() + "\n");
+                else
+                    System.out.println("Pacientul nu exista!");
+            }
+
+            if (i == 9)
+            {
+                interogations.afisMedic();
+            }
+
+            if (i == 10)
+            {
+                interogations.afisPacient();
+            }
+
+            if (i == 11)
+            {
+                interogations.afisProgram();
+            }
+
+            if (i == 12)
+            {
+                break;
+            }
+
+            System.out.println("1 pentru a adauga un medic primar");
+            System.out.println("2 pentru a adauga un medic chirurg");
+            System.out.println("3 pentru a adauga un pacient adult");
+            System.out.println("4 pentru a adauga un pacient copil");
+            System.out.println("5 pentru a adauga o programare pt medic primar");
+            System.out.println("6 pentru a adauga o programare pt medic chirurg");
+            System.out.println("7 pentru a cauta un medic");
+            System.out.println("8 pentru a cauta un client");
+            System.out.println("9 pentru a afisa medicii");
+            System.out.println("10 pentru a afisa pacientii");
+            System.out.println("11 pentru a afisa programarile");
+            System.out.println("12 pentru a termina");
+
+            i = in.nextInt();
+
+        }
     }
 }
-
-//	clase simple cu atribute private / protected și metode de acces;
-//	cel puțin 2 array-uri uni/bidimensionale;
-//	utilizare moștenire pentru crearea de clase adiționale și utilizarea lor în cadrul colecțiilor;
-//	cel puțin o clasă serviciu care sa expună operațiile sistemului;
-//	o clasa Main din care sunt făcute apeluri către servicii.
-
-//package project.actions;
-//
-//        import java.util.Scanner;
-//
-//public class Main {
-//    public static void ShowMenu() {
-//        System.out.println("1. Show a list of existing events");
-//        System.out.println("2. Add an event");
-//        System.out.println("3. Generate an event");
-//        System.out.println("4. Show a list of existing locations");
-//        System.out.println("5. Add a location");
-//        System.out.println("6. Generate a location");
-//        System.out.println("7. Show a list of clients, ordered alphabetically");
-//        System.out.println("8. Add a client/Sign up");
-//        System.out.println("9. Generate a client/Sign up");
-//        System.out.println("10. Check the availability of an event");
-//        System.out.println("11. Buy a ticket to an event");
-//        System.out.println("12. Make a donation to a fundraiser");
-//        System.out.println("13. Show how much money a fundraiser raised");
-//        System.out.println("14. Check if a fundraiser reached their goal.");
-//        System.out.println("0. Exit menu");
-//    }
-//
-//    public static void main(String[] args) {
-//        int opt = -1;
-//        Scanner scanner = new Scanner(System.in);
-//        while (opt != 0) {
-//            ShowMenu();
-//            opt = scanner.nextInt();
-//            switch (opt) {
-//                case 1:
-//                    Service.listEvents();
-//                    break;
-//                case 2:
-//                    Service.addEvent();
-//                    break;
-//                case 3:
-//                    Service.generateEvent();
-//                    break;
-//                case 4:
-//                    Service.listLocations();
-//                    break;
-//                case 5:
-//                    Service.addLocation();
-//                    break;
-//                case 6:
-//                    Service.generateLocation();
-//                    break;
-//                case 7:
-//                    Service.listClients();
-//                    break;
-//                case 8:
-//                    Service.addClient();
-//                    break;
-//                case 9:
-//                    Service.generateClient();
-//                    break;
-//                case 10:
-//                    Service.checkEventAvailability();
-//                    break;
-//                case 11:
-//                    Service.buyTicket();
-//                    break;
-//                case 12:
-//                    Service.makeDonation();
-//                    break;
-//                case 13:
-//                    Service.showSum();
-//                    break;
-//                case 14:
-//                    Service.checkReached();
-//                    break;
-//            }
-//        }
-//    }
-//
-//}
 

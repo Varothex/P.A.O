@@ -7,10 +7,10 @@ public abstract class Programare
 {
     protected String data;
     protected String locatie;
-    protected Pacient pacient;
-    protected Medic medic;
+    protected String pacient;
+    protected String medic;
 
-    public Programare(String data, String locatie, Pacient pacient, Medic medic)
+    public Programare(String data, String locatie, String pacient, String medic)
     {
         this.data = data;
         this.locatie = locatie;
@@ -38,22 +38,22 @@ public abstract class Programare
         this.locatie = locatie;
     }
 
-    public Pacient getPacient()
+    public String getPacient()
     {
         return pacient;
     }
 
-    public void setPacient(Pacient pacient)
+    public void setPacient(String pacient)
     {
         this.pacient = pacient;
     }
 
-    public Medic getMedic()
+    public String getMedic()
     {
         return medic;
     }
 
-    public void setMedic(Medic medic)
+    public void setMedic(String medic)
     {
         this.medic = medic;
     }

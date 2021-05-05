@@ -3,12 +3,12 @@ package com.tema1.programare;
 import com.tema1.client.Pacient;
 import com.tema1.medic.Medic;
 
-public class Programare_Medic_Primar extends Programare
+public class ProgramareMedicPrimar extends Programare
 {
     private int[] pret = {100, 200, 300};
     int consultatie;
 
-    public Programare_Medic_Primar(String data, String locatie, String pacient, String medic, int consultatie)
+    public ProgramareMedicPrimar(String data, String locatie, String pacient, String medic, int consultatie)
     {
         super(data, locatie, pacient, medic);
         this.consultatie = consultatie;

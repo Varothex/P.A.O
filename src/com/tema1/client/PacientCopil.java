@@ -1,11 +1,11 @@
 package com.tema1.client;
 
-public class Pacient_Copil extends Pacient
+public class PacientCopil extends Pacient
 {
     private String frica;
     private String scoala;
 
-    public Pacient_Copil(String nume, int varsta, String afectiune, String frica, String scoala, String[] alergie)
+    public PacientCopil(String nume, int varsta, String afectiune, String frica, String scoala, String[] alergie)
     {
         super(nume, varsta, afectiune, alergie);
         this.frica = frica;

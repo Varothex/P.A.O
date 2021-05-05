@@ -1,6 +1,5 @@
 package com.tema1;
 
-
 import com.tema1.client.*;
 import com.tema1.medic.*;
 import com.tema1.programare.*;
@@ -16,7 +15,7 @@ public class Serviciu
     ArrayList<Pacient> clienti = new ArrayList<>();
     ArrayList<Programare> programari = new ArrayList<>();
 
-    void addMedic_Primar(Scanner cin)
+    public void addMedicPrimar(Scanner cin)
     {
         System.out.println("Nume:");
         String nume = cin.next();
@@ -27,11 +26,11 @@ public class Serviciu
         System.out.println("Salariu:");
         double salariu = cin.nextDouble();
 
-        Medic medic = new Medic_Primar(nume, cabinet, salariu);
+        Medic medic = new MedicPrimar(nume, cabinet, salariu);
         medici.add(medic);
     }
 
-    void addMedic_Chirurg(Scanner cin)
+    void addMedicChirurg(Scanner cin)
     {
         System.out.println("Nume:");
         String nume = cin.next();
@@ -42,11 +41,11 @@ public class Serviciu
         System.out.println("Salariu:");
         double salariu = cin.nextDouble();
 
-        Medic medic = new Medic_Chirurg(nume, cabinet, salariu);
+        Medic medic = new MedicChirurg(nume, cabinet, salariu);
         medici.add(medic);
     }
 
-    void addPacient_Adult(Scanner cin)
+    void addPacientAdult(Scanner cin)
     {
         System.out.println("Nume:");
         String nume = cin.next();
@@ -69,11 +68,11 @@ public class Serviciu
         for (int i = 0; i < nrALergii; i++)
             alergii[i] = cin.next();
 
-        Pacient client = new Pacient_Adult(nume, varsta, afectiunea, asigurare, munca, alergii);
+        Pacient client = new PacientAdult(nume, varsta, afectiunea, asigurare, munca, alergii);
         clienti.add(client);
     }
 
-    void addPacient_Copil(Scanner cin)
+    void addPacientCopil(Scanner cin)
     {
         System.out.println("Nume:");
         String nume = cin.next();
@@ -96,11 +95,11 @@ public class Serviciu
         for (int i = 0; i < nrALergii; i++)
             alergii[i] = cin.next();
 
-        Pacient client = new Pacient_Adult(nume, varsta, afectiunea, frica, scoala, alergii);
+        Pacient client = new PacientAdult(nume, varsta, afectiunea, frica, scoala, alergii);
         clienti.add(client);
     }
 
-    void addProgramare_Medic_Primar(Scanner cin)
+    void addProgramareMedicPrimar(Scanner cin)
     {
         System.out.println("Data:");
         String data = cin.next();
@@ -117,11 +116,11 @@ public class Serviciu
         System.out.println("Consultatie de tip 1, 2 sau 3:");
         int consultatie = cin.nextInt();
 
-        Programare programare = new Programare_Medic_Primar(data, locatie, client, medic, consultatie);
+        Programare programare = new ProgramareMedicPrimar(data, locatie, client, medic, consultatie);
         programari.add(programare);
     }
 
-    void addProgramare_Medic_Chirurg(Scanner cin)
+    void addProgramareMedicChirurg(Scanner cin)
     {
         System.out.println("Data:");
         String data = cin.next();
@@ -138,20 +137,22 @@ public class Serviciu
         System.out.println("Zona de operat:");
         String zona = cin.next();
 
-        Programare programare = new Programare_Medic_Chirurg(data, locatie, client, medic, zona);
+        Programare programare = new ProgramareMedicChirurg(data, locatie, client, medic, zona);
         programari.add(programare);
     }
 
-    static Medic findMedic(int MedicId)
+    //Nu se recomanda metodele statice in serviciu-> se utilizeaza instanta serrviciului pentru apelul lor
+    static void findMedic(int MedicId)
     {
         for (Medic medic: Medici)
         {
             if (medic.getIdMedic() == MedicId)
-                return medic;
+                System.out.println(medic.getNume() + " " + medic.getCabinet() + " " + medic.getIdMedic() + " " + medic.getSalariu() + "\n");
         }
-        return null;
+        System.out.println("Medicul nu exista!");
     }
 
+    //Nu se recomanda metodele statice in serviciu-> se utilizeaza instanta serrviciului pentru apelul lor
     static Pacient findClient(int ClientId)
     {
         for (Pacient client: Clienti)

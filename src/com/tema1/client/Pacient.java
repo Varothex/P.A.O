@@ -2,13 +2,11 @@ package com.tema1.client;
 
 public abstract class Pacient
 {
-    protected String nume;
+    protected String nume, afectiune;
     protected int varsta;
-    protected String afectiune;
     protected String[] alergie;
-    private int idPacient;
     private static int nr = 0;
-
+    protected int idPacient;
     {
         this.idPacient = ++nr;
     }
@@ -21,14 +19,14 @@ public abstract class Pacient
         this.alergie = alergie;
     }
 
+    public int getIdPacient()
+    {
+        return idPacient;
+    }
+
     public String getNume()
     {
         return nume;
-    }
-
-    public void setNume(String nume)
-    {
-        this.nume = nume;
     }
 
     public int getVarsta()
@@ -36,19 +34,9 @@ public abstract class Pacient
         return varsta;
     }
 
-    public void setVarsta(int varsta)
-    {
-        this.varsta = varsta;
-    }
-
     public String getAfectiune()
     {
         return afectiune;
-    }
-
-    public void setAfectiune(String afectiune)
-    {
-        this.afectiune = afectiune;
     }
 
     public void getAlergie(String[] alergie)
@@ -56,20 +44,5 @@ public abstract class Pacient
         for (String s : alergie)
             System.out.println(s + " ");
         System.out.println();
-    }
-
-    public void setAlergie(String[] alergie)
-    {
-        this.alergie = alergie;
-    }
-
-    public int getIdPacient()
-    {
-        return idPacient;
-    }
-
-    public void setId(int idPacient)
-    {
-        this.idPacient = idPacient;
     }
 }

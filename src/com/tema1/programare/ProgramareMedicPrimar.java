@@ -1,8 +1,5 @@
 package com.tema1.programare;
 
-import com.tema1.client.Pacient;
-import com.tema1.medic.Medic;
-
 public class ProgramareMedicPrimar extends Programare
 {
     private int[] pret = {100, 200, 300};
@@ -14,34 +11,8 @@ public class ProgramareMedicPrimar extends Programare
         this.consultatie = consultatie;
     }
 
-    public int[] getPret()
-    {
-        return pret;
-    }
-
-    public void setPret(int[] pret)
-    {
-        this.pret = pret;
-    }
-
-    public int getConsultatie()
-    {
-        return consultatie;
-    }
-
-    public void setConsultatie(int consultatie)
-    {
-        this.consultatie = consultatie;
-    }
-
-    public int cost()
+    public int getCost()
     {
         return pret[consultatie];
-    }
-
-    @Override
-    public String toString()
-    {
-        return "Pacientului " + pacient + " are consultatie la medicul " + medic + " pe data de " + data + " la " + locatie + " si costa " + cost() + ".\n\n";
     }
 }

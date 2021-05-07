@@ -1,45 +1,22 @@
 package com.tema1.medic;
 
+import com.tema1.CSV.Read;
+
 public abstract class Medic
 {
-    public String getSalariu;
-    protected String nume;
-    protected String cabinet;
+    protected String nume, cabinet;
+    public int salariu;
+    private static int nr = 0;
     protected int idMedic;
-    static int nr = 0;
-    protected double salariu;
-
     {
         this.idMedic = ++nr;
     }
 
-    public Medic(String nume, String cabinet, double salariu)
+    public Medic(String nume, String cabinet, int salariu)
     {
         this.nume = nume;
         this.cabinet = cabinet;
         this.salariu = salariu;
-    }
-
-    public abstract double salariu();
-
-    public String getNume()
-    {
-        return nume;
-    }
-
-    public void setNume(String nume)
-    {
-        this.nume = nume;
-    }
-
-    public String getCabinet()
-    {
-        return cabinet;
-    }
-
-    public void setCabinet(String cabinet)
-    {
-        this.cabinet = cabinet;
     }
 
     public int getIdMedic()
@@ -47,13 +24,15 @@ public abstract class Medic
         return idMedic;
     }
 
-    public double getSalariu()
+    public String getNume()
     {
-        return salariu;
+        return nume;
     }
 
-    public void setSalariu(double salariu)
+    public String getCabinet()
     {
-        this.salariu = salariu;
+        return cabinet;
     }
+
+    abstract public int getSalariu();
 }

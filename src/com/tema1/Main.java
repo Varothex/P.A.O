@@ -1,20 +1,31 @@
 package com.tema1;
 
+import java.io.IOException;
 import java.util.Scanner;
+
+import com.tema1.CSV.*;
 import com.tema1.client.*;
-import com.tema1.medic.*;
-import com.tema1.programare.*;
-import com.tema1.Serviciu;
+import com.tema1.medic.MedicPrimar;
+import com.tema1.servicii.*;
 
 public class Main
 {
-    public static void main(String[] args)
+    public static void main(String[] args) throws IOException
     {
         displayCommands();
 
+        MedicPrimar java = new MedicPrimar("Java", "Cluj", 5);
+
+        Read inp = Read.getInstance();
+        inp.MedicPrimarCSV();
+
+        Write out = Write.getInstance();
+        out.writeMedicPrimarCSV(java);
+
+        ServiciiMedicPrimar med = ServiciiMedicPrimar.getInstance();
+
         Scanner in = new Scanner(System.in);
         int i = in.nextInt();
-
         Serviciu interogations = new Serviciu();
 
         while (i != 12)

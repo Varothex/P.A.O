@@ -7,6 +7,11 @@ public abstract class Medic
     protected String cabinet;
     protected int idMedic;
     static int nr = 0;
+
+
+
+
+
     protected double salariu;
 
     {
